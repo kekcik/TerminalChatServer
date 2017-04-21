@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: artifacts/Programm.jar
+Created-By: Trofimov
+Main-Class: MainKt
+
