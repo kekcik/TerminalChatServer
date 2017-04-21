@@ -4,7 +4,6 @@
     <root id="archive" name="project.jar">
       <element id="library" level="project" name="com.sparkjava:spark-core:2.5.4" />
       <element id="library" level="project" name="KotlinJavaRuntime" />
-      <element id="file-copy" path="$PROJECT_DIR$/src/main.kt" />
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
       </element>
