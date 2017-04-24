@@ -21,11 +21,9 @@ private enum class Errors(val code: Int) {
 
 private fun tokenGen(): String {
     val alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_"
-    return "0123456789123456".map { _ ->
-        val index = (SplittableRandom().nextInt() % 64 + 64) % 64
-        print(index)
-        alphabet[index]
-    }.joinToString(transform = Char::toString)
+    return "0123456789123456"
+            .map { _ -> alphabet[SplittableRandom().nextInt(64)]}
+            .joinToString(separator = "")
 }
 
 private class User {
