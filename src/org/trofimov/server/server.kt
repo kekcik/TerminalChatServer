@@ -6,13 +6,6 @@ package org.trofimov.server
 import spark.Spark.*
 
 fun main(args: Array<String>) {
-    port(12345)
-    get("/hello") { req, res ->
-        val a = 123
-        println(req.params())
-        "Hello World" + a
-    }
-    get("/") { req, res ->
-        "Main page"
-    }
+    apiManager()
+
 }
