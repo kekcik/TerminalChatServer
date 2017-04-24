@@ -21,8 +21,13 @@ private enum class Errors(val code: Int) {
 
 private fun tokenGen(): String {
     val alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_"
-    return "0123456789123456".map { _ -> alphabet[Random().nextInt() % 64] }.toString()
+    return "0123456789123456".map { _ ->
+        val index = (SplittableRandom().nextInt() % 64 + 64) % 64
+        print(index)
+        alphabet[index]
+    }.joinToString(transform = Char::toString)
 }
+
 private class User {
     var login: String
     var password: String
@@ -36,7 +41,7 @@ private class User {
         this.token = token
     }
 
-    constructor(login: String, password: String, name: String)  {
+    constructor(login: String, password: String, name: String) {
         this.login = login
         this.password = password
         this.name = name
