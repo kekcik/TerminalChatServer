@@ -9,15 +9,7 @@ import javax.naming.Name
  * Created by ivan on 24.04.17.
  */
 
-private enum class Errors(val code: Int) {
-    OK(0),
-    WRONG_PASSWORD(10),
-    CHAT_NAME_ALREADY_USED(20),
-    WRONG_TOKEN(30),
-    CHAT_NO_FOUND(40),
-    LOGIN_ALREADY_USED(50),
-    LOGIN_NOT_FOUND(60)
-}
+
 
 private fun tokenGen(): String {
     val alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_"
@@ -48,6 +40,15 @@ private class User {
 }
 
 private var users = mutableMapOf<String, User>()
+
+fun getLoginBy(token: String): String {
+    for (user: MutableMap.MutableEntry<String, User> in users) {
+        if (user.value.token == token) {
+            return user.key
+        }
+    }
+    return ""
+}
 
 fun putUser(login: String, password: String, name: String): Pair<Int, String> {
     if (users.containsKey(login))

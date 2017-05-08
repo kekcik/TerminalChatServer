@@ -1,5 +1,6 @@
 package org.trofimov.server
 
+import com.yst.demo.jsonObject
 import kotlin.*
 import spark.Spark
 import java.net.URI
@@ -37,6 +38,26 @@ fun initMethods() {
         val password = req.params("password").split("=")[1]
         val name = req.params("name").split("=")[1]
         putUser(login, password, name)
+    }
+
+    Spark.get(PREFIX + "createRoom/:token/:name/:pw") { req, res ->
+        val token = req.params("token").split("=")[1]
+        val name = req.params("name").split("=")[1]
+        val pw = req.params("pw").split("=")[1]
+        createRoom(token, name, pw)
+    }
+
+    Spark.get(PREFIX + "sendMessage/:token/:roomName/:text") { req, res ->
+        val token = req.params("token").split("=")[1]
+        val roomName = req.params("roomName").split("=")[1]
+        val text = req.params("text").split("=")[1]
+        createRoom(token, roomName, text)
+    }
+
+    Spark.get(PREFIX + "getMessage/:token/:roomName") { req, res ->
+        val token = req.params("token").split("=")[1]
+        val roomName = req.params("roomName").split("=")[1]
+        getMessage(token, roomName)
     }
 }
 
