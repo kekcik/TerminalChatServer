@@ -21,7 +21,6 @@ fun initServer() {
 
 
 fun initMethods() {
-    val alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_"
     val PREFIX = "/api/"
     Spark.get(PREFIX + "login/:login/:password") { req, res ->
         val login = req.params("login").split("=")[1]
@@ -67,6 +66,11 @@ fun initMethods() {
         connectToRoom(token, roomName, pw)
     }
 
-
+    Spark.get(PREFIX + "getTopMessage/:token/:roomName/:amount") { req, res ->
+        val token = req.params("token").split("=")[1]
+        val roomName = req.params("roomName").split("=")[1]
+        val amount = req.params("amount").split("=")[1].toInt()
+        getTopMessage(token, roomName, amount)
+    }
 }
 

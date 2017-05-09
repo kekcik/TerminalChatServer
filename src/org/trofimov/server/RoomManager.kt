@@ -6,9 +6,6 @@ import java.util.*
  * Created by ivan on 09.05.17.
  */
 
-
-
-
 class Message constructor(text: String){
     val text = text
     val date = Date().time
@@ -103,3 +100,20 @@ fun connectToRoom(token: String, roomName: String, pw: String): Int {
     return Errors.WRONG_ROOM_NAME.code
 }
 
+fun getTopMessage(token: String, roomName: String, amount: Int): Pair<Int, List<Message>> {
+    val login = getLoginBy(token)
+    if (login == "") {
+        return Pair(Errors.WRONG_TOKEN.code, mutableListOf<Message>())
+    }
+    for (room: Room in rooms) {
+        if (room.name == roomName) {
+            for (member: String in room.members) {
+                if (member == login) {
+                    return Pair(Errors.OK.code, room.messages.subList(maxOf(room.messages.count() - amount, 0), room.messages.count()))
+                }
+            }
+            return Pair(Errors.WRONG_LOGIN.code, mutableListOf<Message>())
+        }
+    }
+    return Pair(Errors.WRONG_ROOM_NAME.code, mutableListOf<Message>())
+}
