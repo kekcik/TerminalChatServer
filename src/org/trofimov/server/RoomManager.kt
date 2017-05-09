@@ -102,3 +102,4 @@ fun connectToRoom(token: String, roomName: String, pw: String): Int {
     }
     return Errors.WRONG_ROOM_NAME.code
 }
+
