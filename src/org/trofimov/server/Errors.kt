@@ -15,5 +15,6 @@ enum class Errors(val code: Int) {
     LOGIN_NOT_FOUND(60),
     WRONG_LOGIN(70),
     WRONG_ROOM_NAME(80),
-    ROOM_NAME_ALREADY_USED(90)
+    ROOM_NAME_ALREADY_USED(90),
+    ALREADY_CONNECT(100)
 }

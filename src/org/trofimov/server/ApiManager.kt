@@ -59,5 +59,12 @@ fun initMethods() {
         val roomName = req.params("roomName").split("=")[1]
         getMessage(token, roomName)
     }
+
+    Spark.get(PREFIX + "connectToRoom/:token/:roomName/:pw") { req, res ->
+        val token = req.params("token").split("=")[1]
+        val roomName = req.params("roomName").split("=")[1]
+        val pw = req.params("pw").split("=")[1]
+        connectToRoom(token, roomName, pw)
+    }
 }
 

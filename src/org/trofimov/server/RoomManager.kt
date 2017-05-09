@@ -79,3 +79,26 @@ fun getMessage(token: String, roomName: String): Pair<Int, List<Message>> {
     }
     return Pair(Errors.WRONG_ROOM_NAME.code, mutableListOf<Message>())
 }
+
+fun connectToRoom(token: String, roomName: String, pw: String): Int {
+    val login = getLoginBy(token)
+    if (login == "") {
+        return Errors.WRONG_TOKEN.code
+    }
+    for (room: Room in rooms) {
+        if (room.name == roomName) {
+            for (member: String in room.members) {
+                if (member == login) {
+                    return Errors.ALREADY_CONNECT.code
+                }
+            }
+            if (room.pw == pw) {
+                room.members.add(login)
+                return Errors.OK.code
+            } else {
+                return Errors.WRONG_PASSWORD.code
+            }
+        }
+    }
+    return Errors.WRONG_ROOM_NAME.code
+}
