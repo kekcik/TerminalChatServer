@@ -10,11 +10,10 @@ import javax.naming.Name
  */
 
 
-
 private fun tokenGen(): String {
     val alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_"
     return "0123456789123456"
-            .map { _ -> alphabet[SplittableRandom().nextInt(64)]}
+            .map { _ -> alphabet[SplittableRandom().nextInt(64)] }
             .joinToString(separator = "")
 }
 
@@ -37,6 +36,16 @@ private class User {
         this.name = name
         this.token = tokenGen()
     }
+
+    fun toPrint(): String {
+        return toJSON(
+                Pair("login", login),
+                Pair("password", password),
+                Pair("name", name),
+                Pair("token", token)
+
+        )
+    }
 }
 
 private var users = mutableMapOf<String, User>()
@@ -50,22 +59,35 @@ fun getLoginBy(token: String): String {
     return ""
 }
 
-fun putUser(login: String, password: String, name: String): Pair<Int, String> {
+fun putUser(login: String, password: String, name: String): String {
     if (users.containsKey(login))
-        return Pair(Errors.LOGIN_ALREADY_USED.code, "")
+        return toJSON(
+                Pair("code", Errors.LOGIN_ALREADY_USED.code.toString()),
+                Pair("token", "")
+        )
     users.put(login, User(login, password, name))
-    return Pair(Errors.OK.code, users[login]!!.token)
+    return toJSON(
+            Pair("code", Errors.OK.code.toString()),
+            Pair("token", users[login]!!.token)
+    )
 }
 
-fun checkUser(login: String, password: String): Pair<Int, String> {
+fun checkUser(login: String, password: String): String {
     if (!users.containsKey(login))
-        return Pair(Errors.LOGIN_NOT_FOUND.code, "")
-    if (users[login]!!.password != password)
-        return Pair(Errors.WRONG_PASSWORD.code, "")
+        return toJSON(
+                Pair("code", Errors.LOGIN_NOT_FOUND.code.toString()),
+                Pair("token", ""))
+    else if (users[login]!!.password != password)
+        return toJSON(
+                Pair("code", Errors.WRONG_PASSWORD.code.toString()),
+                Pair("token", ""))
     else
-        return Pair(Errors.OK.code, users[login]!!.token)
+        return toJSON(
+                Pair("code", Errors.OK.code.toString()),
+                Pair("token", users[login]!!.token))
 }
 
 fun getUsers(): String {
-    return users.toString()
+    val values = users.values
+    return toJSON(Pair("users", toJSONArray(values.map(User::toPrint))))
 }
