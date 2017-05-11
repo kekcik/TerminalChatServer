@@ -6,13 +6,19 @@ import kotlin.coroutines.experimental.EmptyCoroutineContext.plus
  * Created by ivan on 10.05.17.
  */
 
-fun toJSON(vararg args: Pair<String, String>): String {
+data class Foo(val name: String, val content: String, val isString: Boolean)
+
+fun toJSON(vararg args: Foo): String {
     var json = ""
     json += "{"
     for (arg in args) {
-        val key = arg.first
-        val v = arg.second
-        json += """"$key":"$v", """
+        val key = arg.name
+        val v = arg.content
+        if (arg.isString) {
+            json += """"$key":"$v", """
+        } else {
+            json += """"$key":$v, """
+        }
     }
     json = json.substring(0, json.length - 2)
     json += "}"
@@ -34,9 +40,15 @@ fun toJSONArray(args: List<String>): String {
     var json = ""
     json += "["
     for (arg in args) {
-        json += """"$arg", """
+        if (arg[0] == '{') {
+            json += """$arg, """
+        } else {
+            json += """"$arg", """
+        }
     }
-    json = json.substring(0, json.length - 2)
+    if (args.isNotEmpty()) {
+        json = json.substring(0, json.length - 2)
+    }
     json += "]"
     return json
 }

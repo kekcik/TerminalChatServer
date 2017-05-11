@@ -11,8 +11,8 @@ class Message constructor(text: String){
     val date = Date().time
     fun toPrint(): String {
         return toJSON(
-                Pair("text", text),
-                Pair("date", date.toString()))
+                Foo("text", text, true),
+                Foo("date", date.toString(), true))
     }
 }
 
@@ -29,11 +29,11 @@ private var rooms = mutableListOf<Room>()
 fun createRoom(token: String, name: String, pw: String): String {
     val login = getLoginBy(token)
     if (login == "") {
-        return toJSON(Pair("code", Errors.WRONG_TOKEN.code.toString()))
+        return toJSON(Foo("code", Errors.WRONG_TOKEN.code.toString(), false))
     }
     rooms
             .filter { it.name == name }
-            .forEach { return toJSON(Pair("code", Errors.ROOM_NAME_ALREADY_USED.code.toString()))
+            .forEach { return toJSON(Foo("code", Errors.ROOM_NAME_ALREADY_USED.code.toString(), false))
             }
     //check name
 
@@ -42,13 +42,13 @@ fun createRoom(token: String, name: String, pw: String): String {
     room.members.add(login)
     room.messages.add(Message("$login создал чат"))
     rooms.add(room)
-    return toJSON(Pair("code", Errors.OK.code.toString()))
+    return toJSON(Foo("code", Errors.OK.code.toString(), false))
 }
 
 fun sendMessage(token: String, roomName: String, text: String): String {
     val login = getLoginBy(token)
     if (login == "") {
-        return toJSON(Pair("code", Errors.WRONG_TOKEN.code.toString()))
+        return toJSON(Foo("code", Errors.WRONG_TOKEN.code.toString(), false))
     }
     for (room: Room in rooms) {
         if (room.name == roomName) {
@@ -56,81 +56,83 @@ fun sendMessage(token: String, roomName: String, text: String): String {
                 if (member == login) {
                     val message = Message(text)
                     room.messages.add(message)
-                    return toJSON(Pair("code", Errors.OK.code.toString()))
+                    return toJSON(Foo("code", Errors.OK.code.toString(), false))
                 }
             }
-            return toJSON(Pair("code", Errors.WRONG_LOGIN.code.toString()))
+            return toJSON(Foo("code", Errors.WRONG_LOGIN.code.toString(), false))
         }
     }
-    return toJSON(Pair("code", Errors.WRONG_ROOM_NAME.code.toString()))
+    return toJSON(Foo("code", Errors.WRONG_ROOM_NAME.code.toString(), false))
 }
 
 fun getMessage(token: String, roomName: String): String {
     val login = getLoginBy(token)
     if (login == "") {
         return toJSON(
-                Pair("code", Errors.WRONG_TOKEN.code.toString()),
-                Pair("messages:", "[]"))    }
+                Foo("code", Errors.WRONG_TOKEN.code.toString(), false),
+                Foo("messages:", "[]", true))
+    }
     for (room: Room in rooms) {
         if (room.name == roomName) {
             for (member: String in room.members) {
                 if (member == login) {
                     return toJSON(
-                            Pair("code", Errors.OK.code.toString()),
-                            Pair("messages:", toJSONArray(room.messages.map { it.toPrint() })))
+                            Foo("code", Errors.OK.code.toString(), false),
+                            Foo("messages:", toJSONArray(room.messages.map { it.toPrint() }), true))
                 }
             }
             return toJSON(
-                    Pair("code", Errors.WRONG_LOGIN.code.toString()),
-                    Pair("messages:", "[]"))        }
+                    Foo("code", Errors.WRONG_LOGIN.code.toString(), false),
+                    Foo("messages:", "[]", true))        }
     }
     return toJSON(
-            Pair("code", Errors.WRONG_ROOM_NAME.code.toString()),
-            Pair("messages:", "[]"))}
+            Foo("code", Errors.WRONG_ROOM_NAME.code.toString(), false),
+            Foo("messages:", "[]", true))}
 
 fun connectToRoom(token: String, roomName: String, pw: String): String {
     val login = getLoginBy(token)
     if (login == "") {
-        return toJSON(Pair("code", Errors.WRONG_TOKEN.code.toString()))
+        return toJSON(Foo("code", Errors.WRONG_TOKEN.code.toString(), false))
     }
     for (room: Room in rooms) {
         if (room.name == roomName) {
             for (member: String in room.members) {
                 if (member == login) {
-                    return toJSON(Pair("code", Errors.ALREADY_CONNECT.code.toString()))
+                    return toJSON(Foo("code", Errors.ALREADY_CONNECT.code.toString(), false))
                 }
             }
             if (room.pw == pw) {
                 room.members.add(login)
-                return toJSON(Pair("code", Errors.OK.code.toString()))
+                return toJSON(Foo("code", Errors.OK.code.toString(), false))
             } else {
-                return toJSON(Pair("code", Errors.WRONG_PASSWORD.code.toString()))
+                return toJSON(Foo("code", Errors.WRONG_PASSWORD.code.toString(), false))
             }
         }
     }
-    return toJSON(Pair("code", Errors.WRONG_ROOM_NAME.code.toString()))
+    return toJSON(Foo("code", Errors.WRONG_ROOM_NAME.code.toString(), false))
 }
 
 fun getTopMessage(token: String, roomName: String, amount: Int): String {
     val login = getLoginBy(token)
     if (login == "") {
         return toJSON(
-                Pair("code", Errors.WRONG_TOKEN.code.toString()),
-                Pair("messages:", "[]"))
+                Foo("code", Errors.WRONG_TOKEN.code.toString(), false),
+                Foo("messages:", "[]", true))
     }
     for (room: Room in rooms) {
         if (room.name == roomName) {
             for (member: String in room.members) {
                 if (member == login) {
                     return toJSON(
-                            Pair("code", Errors.OK.code.toString()),
-                            Pair("messages:", toJSONArray(room.messages.subList(maxOf(room.messages.count() - amount, 0), room.messages.count()).map { it.toPrint() })))
+                            Foo("code", Errors.OK.code.toString(), false),
+                            Foo("messages:", toJSONArray(room.messages.subList(maxOf(room.messages.count() - amount, 0),
+                                    room.messages.count()).map { it.toPrint() }), true))
                 }
             }
             return toJSON(
-                    Pair("code", Errors.WRONG_LOGIN.code.toString()),
-                    Pair("messages:", "[]"))        }
+                    Foo("code", Errors.WRONG_LOGIN.code.toString(), false),
+                    Foo("messages:", "[]", true))        }
     }
     return toJSON(
-            Pair("code", Errors.WRONG_ROOM_NAME.code.toString()),
-            Pair("messages:", "[]"))}
+            Foo("code", Errors.WRONG_ROOM_NAME.code.toString(), false),
+            Foo("messages:", "[]", true))}

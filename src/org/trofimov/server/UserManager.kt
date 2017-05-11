@@ -1,14 +1,8 @@
 package org.trofimov.server
-
-import java.security.SecureRandom
 import java.util.*
-import java.util.stream.Stream
-import javax.naming.Name
-
 /**
  * Created by ivan on 24.04.17.
  */
-
 
 private fun tokenGen(): String {
     val alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_"
@@ -17,33 +11,15 @@ private fun tokenGen(): String {
             .joinToString(separator = "")
 }
 
-private class User {
-    var login: String
-    var password: String
-    var name: String
-    var token: String
-
-    constructor(login: String, password: String, name: String, token: String) {
-        this.login = login
-        this.password = password
-        this.name = name
-        this.token = token
-    }
-
-    constructor(login: String, password: String, name: String) {
-        this.login = login
-        this.password = password
-        this.name = name
-        this.token = tokenGen()
-    }
+private class User(var login: String, var password: String, var name: String) {
+    var token: String = tokenGen()
 
     fun toPrint(): String {
         return toJSON(
-                Pair("login", login),
-                Pair("password", password),
-                Pair("name", name),
-                Pair("token", token)
-
+                Foo("login", login, true),
+                Foo("password", password, true),
+                Foo("name", name, true),
+                Foo("token", token, true)
         )
     }
 }
@@ -62,32 +38,32 @@ fun getLoginBy(token: String): String {
 fun putUser(login: String, password: String, name: String): String {
     if (users.containsKey(login))
         return toJSON(
-                Pair("code", Errors.LOGIN_ALREADY_USED.code.toString()),
-                Pair("token", "")
+                Foo("code", Errors.LOGIN_ALREADY_USED.code.toString(), false),
+                Foo("token", "", true)
         )
     users.put(login, User(login, password, name))
     return toJSON(
-            Pair("code", Errors.OK.code.toString()),
-            Pair("token", users[login]!!.token)
+            Foo("code", Errors.OK.code.toString(), false),
+            Foo("token", users[login]!!.token, true)
     )
 }
 
 fun checkUser(login: String, password: String): String {
     if (!users.containsKey(login))
         return toJSON(
-                Pair("code", Errors.LOGIN_NOT_FOUND.code.toString()),
-                Pair("token", ""))
+                Foo("code", Errors.LOGIN_NOT_FOUND.code.toString(), false),
+                Foo("token", "", true))
     else if (users[login]!!.password != password)
         return toJSON(
-                Pair("code", Errors.WRONG_PASSWORD.code.toString()),
-                Pair("token", ""))
+                Foo("code", Errors.WRONG_PASSWORD.code.toString(), false),
+                Foo("token", "", true))
     else
         return toJSON(
-                Pair("code", Errors.OK.code.toString()),
-                Pair("token", users[login]!!.token))
+                Foo("code", Errors.OK.code.toString(), false),
+                Foo("token", users[login]!!.token, true))
 }
 
 fun getUsers(): String {
     val values = users.values
-    return toJSON(Pair("users", toJSONArray(values.map(User::toPrint))))
+    return toJSON(Foo("users", toJSONArray(values.map(User::toPrint)), false))
 }
