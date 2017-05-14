@@ -6,8 +6,7 @@ import java.util.*
  * Created by ivan on 09.05.17.
  */
 
-class Message constructor(text: String){
-    val text = text
+class Message constructor(val text: String){
     val date = Date().time
     fun toPrint(): String {
         return toJSON(
@@ -16,9 +15,7 @@ class Message constructor(text: String){
     }
 }
 
-class Room constructor(name: String, pw: String){
-    val name = name
-    val pw = pw
+class Room constructor(val name: String, val pw: String){
     var messages = mutableListOf<Message>()
     var members = mutableListOf<String>()
     var admins = mutableListOf<String>()
@@ -72,22 +69,19 @@ fun getMessage(token: String, roomName: String): String {
                 Foo("code", Errors.WRONG_TOKEN.code.toString(), false),
                 Foo("messages:", "[]", true))
     }
-    for (room: Room in rooms) {
-        if (room.name == roomName) {
-            for (member: String in room.members) {
-                if (member == login) {
-                    return toJSON(
-                            Foo("code", Errors.OK.code.toString(), false),
-                            Foo("messages:", toJSONArray(room.messages.map { it.toPrint() }), true))
-                }
+    return rooms
+            .firstOrNull { it.name == roomName }
+            ?.let { room ->
+                if (room.members.contains(login)) toJSON(
+                        Foo("code", Errors.OK.code.toString(), false),
+                        Foo("messages:", toJSONArray(room.messages.map { it.toPrint() }), true)) else toJSON(
+                        Foo("code", Errors.WRONG_LOGIN.code.toString(), false),
+                        Foo("messages:", "[]", true))
             }
-            return toJSON(
-                    Foo("code", Errors.WRONG_LOGIN.code.toString(), false),
-                    Foo("messages:", "[]", true))        }
-    }
-    return toJSON(
+            ?: toJSON(
             Foo("code", Errors.WRONG_ROOM_NAME.code.toString(), false),
-            Foo("messages:", "[]", true))}
+            Foo("messages:", "[]", true))
+}
 
 fun connectToRoom(token: String, roomName: String, pw: String): String {
     val login = getLoginBy(token)
@@ -96,11 +90,9 @@ fun connectToRoom(token: String, roomName: String, pw: String): String {
     }
     for (room: Room in rooms) {
         if (room.name == roomName) {
-            for (member: String in room.members) {
-                if (member == login) {
-                    return toJSON(Foo("code", Errors.ALREADY_CONNECT.code.toString(), false))
-                }
-            }
+            room.members
+                    .filter { it == login }
+                    .forEach { return toJSON(Foo("code", Errors.ALREADY_CONNECT.code.toString(), false)) }
             if (room.pw == pw) {
                 room.members.add(login)
                 return toJSON(Foo("code", Errors.OK.code.toString(), false))
@@ -121,17 +113,13 @@ fun getTopMessage(token: String, roomName: String, amount: Int): String {
     }
     for (room: Room in rooms) {
         if (room.name == roomName) {
-            for (member: String in room.members) {
-                if (member == login) {
-                    return toJSON(
-                            Foo("code", Errors.OK.code.toString(), false),
-                            Foo("messages:", toJSONArray(room.messages.subList(maxOf(room.messages.count() - amount, 0),
-                                    room.messages.count()).map { it.toPrint() }), true))
-                }
-            }
-            return toJSON(
+            return if (room.members.contains(login)) toJSON(
+                    Foo("code", Errors.OK.code.toString(), false),
+                    Foo("messages:", toJSONArray(room.messages.subList(maxOf(room.messages.count() - amount, 0),
+                            room.messages.count()).map { it.toPrint() }), true)) else toJSON(
                     Foo("code", Errors.WRONG_LOGIN.code.toString(), false),
-                    Foo("messages:", "[]", true))        }
+                    Foo("messages:", "[]", true))
+        }
     }
     return toJSON(
             Foo("code", Errors.WRONG_ROOM_NAME.code.toString(), false),

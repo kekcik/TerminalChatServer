@@ -29,7 +29,7 @@ fun initMethods() {
     }
 
     Spark.get(PREFIX + "getUsers") { req, res ->
-        getUsers()
+        getUsersOld()
     }
 
     Spark.get(PREFIX + "register/:login/:password/:name") { req, res ->
