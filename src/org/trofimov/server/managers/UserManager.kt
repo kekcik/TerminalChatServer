@@ -22,6 +22,7 @@ internal fun tokenGen(): String {
 
 fun getLoginBy(token: String): User? {
     getUsers()
+
             .filter { it.token == token }
             .forEach{ return it}
     return null
