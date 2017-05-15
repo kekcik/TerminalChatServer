@@ -1,6 +1,12 @@
 package org.trofimov.server.models
 
 import org.trofimov.server.*
+import org.trofimov.server.helpers.Foo
+import org.trofimov.server.helpers.toJSON
+import org.trofimov.server.managers.password
+import org.trofimov.server.managers.tokenGen
+import org.trofimov.server.managers.url
+import org.trofimov.server.managers.user
 import java.sql.DriverManager
 
 /**
@@ -21,7 +27,7 @@ class User(var userId: Int?, var login: String, var password: String, var name: 
 }
 
 fun insertUser(user: User) {
-    val connection = DriverManager.getConnection(url, org.trofimov.server.user, org.trofimov.server.password)
+    val connection = DriverManager.getConnection(url, org.trofimov.server.managers.user, password)
     val lgn = user.login
     val pwd = user.password
     val nme = user.name
@@ -42,7 +48,7 @@ fun insertUser(user: User) {
 
 fun getUsers(): Array<User> {
     var result = arrayOf<User>()
-    val connection = DriverManager.getConnection(url, user, org.trofimov.server.password)
+    val connection = DriverManager.getConnection(url, user, password)
     val sql = """
             Select * from User;"""
     val stmt = connection.createStatement()
@@ -65,7 +71,7 @@ fun getUsers(): Array<User> {
 fun changeTokenFor(user: User): String {
     val token = tokenGen()
     val uId = user.userId
-    val connection = DriverManager.getConnection(url, org.trofimov.server.user, org.trofimov.server.password)
+    val connection = DriverManager.getConnection(url, org.trofimov.server.managers.user, password)
     val sql = """
         Update User
         Set token = '$token'

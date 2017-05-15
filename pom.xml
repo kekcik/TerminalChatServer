@@ -50,7 +50,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>org.trofimov.server.ServerKt</mainClass>
+                            <mainClass>org.trofimov.server.ServerMainKt</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
