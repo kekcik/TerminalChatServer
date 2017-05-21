@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa6df56f-c7dc-4988-b850-64715b3aecf3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/org/trofimov/server/models/User.class" afterPath="$PROJECT_DIR$/build/org/trofimov/server/models/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/org/trofimov/server/models/UserKt.class" afterPath="$PROJECT_DIR$/build/org/trofimov/server/models/UserKt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/demo-jar-with-dependencies.jar" afterPath="$PROJECT_DIR$/target/demo-jar-with-dependencies.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/demo.jar" afterPath="$PROJECT_DIR$/target/demo.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/q.sh" afterPath="$PROJECT_DIR$/q.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/models/User.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/models/User.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
@@ -90,8 +84,8 @@
       <file leaf-file-name="User.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/User.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="77" column="13" lean-forward="false" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+            <state relative-caret-position="467">
+              <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
                 <element signature="e#36#344#0" expanded="true" />
               </folding>
@@ -1135,8 +1129,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/User.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="77" column="13" lean-forward="false" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+        <state relative-caret-position="467">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
             <element signature="e#36#344#0" expanded="true" />
           </folding>

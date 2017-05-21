@@ -75,7 +75,6 @@ fun changeTokenFor(user: User): String {
         Where userId = $uId;"""
     val stmt = connection.createStatement()
     stmt.executeUpdate(sql)
-    val a = 1
     connection.close()
     stmt.close()
     return token
