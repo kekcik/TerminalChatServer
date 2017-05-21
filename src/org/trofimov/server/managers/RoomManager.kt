@@ -86,11 +86,9 @@ fun getMessage(token: String, roomName: String): String {
     return rooms
             .firstOrNull { it.name == roomName }
             ?.let { room ->
-                val memberIds = getUARsForRoom(room.roomId).map(UAR::userId)
-                val messages = getMessages()
-                if (memberIds.contains(user.userId)) toJSON(
+                if (getUARsForRoom(room.roomId).map(UAR::userId).contains(user.userId)) toJSON(
                         Foo("code", Errors.OK.code.toString(), false),
-                        Foo("messages:", toJSONArray(messages.map { it.toPrint() }), true))
+                        Foo("messages:", toJSONArray(getMessages().map { it.toPrint() }), false))
                 else toJSON(
                         Foo("code", Errors.WRONG_LOGIN.code.toString(), false),
                         Foo("messages:", "[]", true))
@@ -114,7 +112,7 @@ fun getTopMessage(token: String, roomName: String, amount: Int): String {
                         .map { it.toPrint() }
                 if (memberIds.contains(user.userId)) toJSON(
                         Foo("code", Errors.OK.code.toString(), false),
-                        Foo("messages:", toJSONArray(msgInStr), true))
+                        Foo("messages:", toJSONArray(msgInStr), false))
                 else toJSON(
                         Foo("code", Errors.WRONG_LOGIN.code.toString(), false),
                         Foo("messages:", "[]", true))
