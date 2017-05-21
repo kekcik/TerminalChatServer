@@ -41,7 +41,7 @@ fun initMethods() {
     }
 
     Spark.get(PREFIX + "getRooms") { req, res ->
-        println("GET: getRooms -> <- ping: ")
+        print("GET: getRooms -> <- ping: ")
         val ms = Instant.now().toEpochMilli()
         val ans = getRoomsM()
         println(Instant.now().toEpochMilli() - ms)
@@ -53,7 +53,7 @@ fun initMethods() {
         val password = req.params("password").split("=")[1]
         val name = req.params("name").split("=")[1]
         val ms = Instant.now().toEpochMilli()
-        println("GET: register -> $login, $password, $name <- ping: ")
+        print("GET: register -> $login, $password, $name <- ping: ")
         val ans = putUser(login, password, name)
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -64,7 +64,7 @@ fun initMethods() {
         val name = req.params("name").split("=")[1]
         val pw = req.params("pw").split("=")[1]
         val ms = Instant.now().toEpochMilli()
-        println("GET: createRoom -> $token, $name, $pw <- ping: ")
+        print("GET: createRoom -> $token, $name, $pw <- ping: ")
         val ans = createRoom(token, name, pw)
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -75,7 +75,7 @@ fun initMethods() {
         val roomName = req.params("roomName").split("=")[1]
         val text = req.params("text").split("=")[1]
         val ms = Instant.now().toEpochMilli()
-        println("GET: sendMessage -> $token, $roomName, $text <- ping: ")
+        print("GET: sendMessage -> $token, $roomName, $text <- ping: ")
         val ans = sendMessage(token, roomName, text)
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -85,7 +85,7 @@ fun initMethods() {
         val token = req.params("token").split("=")[1]
         val roomName = req.params("roomName").split("=")[1]
         val ms = Instant.now().toEpochMilli()
-        println("GET: getMessage -> $token, $roomName <- ping: ")
+        print("GET: getMessage -> $token, $roomName <- ping: ")
         val ans = getMessage(token, roomName)
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -96,7 +96,7 @@ fun initMethods() {
         val roomName = req.params("roomName").split("=")[1]
         val ms = Instant.now().toEpochMilli()
         val pw = req.params("pw").split("=")[1]
-        println("GET: connectToRoom -> $token, $roomName, $pw <- ping: ")
+        print("GET: connectToRoom -> $token, $roomName, $pw <- ping: ")
         val ans = connectToRoom(token, roomName, pw)
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -107,7 +107,7 @@ fun initMethods() {
         val roomName = req.params("roomName").split("=")[1]
         val amount = req.params("amount").split("=")[1].toInt()
         val ms = Instant.now().toEpochMilli()
-        println("GET: getTopMessage -> $token, $roomName, $amount <- ping: ")
+        print("GET: getTopMessage -> $token, $roomName, $amount <- ping: ")
         val ans = getTopMessage(token, roomName, amount)
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -116,7 +116,7 @@ fun initMethods() {
     Spark.get(PREFIX + "roomsForUser/:token") { req, res ->
         val token = req.params("token").split("=")[1]
         val ms = Instant.now().toEpochMilli()
-        println("GET: roomsForUser -> $token <- ping: ")
+        print("GET: roomsForUser -> $token <- ping: ")
         val ans = roomsForUser(token)
         println(Instant.now().toEpochMilli() - ms)
         ans
