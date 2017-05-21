@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa6df56f-c7dc-4988-b850-64715b3aecf3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/org/trofimov/server/models/User.class" afterPath="$PROJECT_DIR$/build/org/trofimov/server/models/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/org/trofimov/server/models/UserKt.class" afterPath="$PROJECT_DIR$/build/org/trofimov/server/models/UserKt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/demo-jar-with-dependencies.jar" afterPath="$PROJECT_DIR$/target/demo-jar-with-dependencies.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/demo.jar" afterPath="$PROJECT_DIR$/target/demo.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/models/Message.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/models/Message.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/models/Room.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/models/Room.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/models/UAR.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/models/UAR.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/q.sh" afterPath="$PROJECT_DIR$/q.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/models/User.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/models/User.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
@@ -89,10 +90,10 @@
       <file leaf-file-name="User.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/User.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+            <state relative-caret-position="482">
+              <caret line="77" column="13" lean-forward="false" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
               <folding>
-                <element signature="e#36#373#0" expanded="true" />
+                <element signature="e#36#344#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -668,7 +669,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -682,7 +682,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27755103" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31938776" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31938776" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19070904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1135,10 +1135,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/User.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+        <state relative-caret-position="482">
+          <caret line="77" column="13" lean-forward="false" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
           <folding>
-            <element signature="e#36#373#0" expanded="true" />
+            <element signature="e#36#344#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,6 +1,5 @@
 package org.trofimov.server.models
 
-import org.trofimov.server.*
 import org.trofimov.server.helpers.Foo
 import org.trofimov.server.helpers.toJSON
 import org.trofimov.server.managers.password
@@ -16,7 +15,6 @@ import java.sql.DriverManager
 
 class User(var userId: Int?, var login: String, var password: String, var name: String) {
     var token: String = tokenGen()
-
     fun toPrint(): String {
         return toJSON(
                 Foo("login", login, true),
@@ -77,6 +75,7 @@ fun changeTokenFor(user: User): String {
         Where userId = $uId;"""
     val stmt = connection.createStatement()
     stmt.executeUpdate(sql)
+    val a = 1
     connection.close()
     stmt.close()
     return token
