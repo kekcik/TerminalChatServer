@@ -30,8 +30,7 @@ fun insertUAR(uar: UAR) {
     INSERT INTO UserAssignRoom (userId, roomId)
     VALUES ($uId, $rId);"""
     val stmt = connection.createStatement()
-    val rs = stmt.executeUpdate(sql)
-    println(rs.toString() + " -- rs")
+    stmt.executeUpdate(sql)
     connection.close()
     stmt.close()
 }

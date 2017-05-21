@@ -19,26 +19,24 @@ class User(var userId: Int?, var login: String, var password: String, var name: 
 
     fun toPrint(): String {
         return toJSON(
-                Foo("login", URLEncoder.encode(login, "UTF-8"), true),
-                Foo("password", URLEncoder.encode(password, "UTF-8"), true),
-                Foo("name", URLEncoder.encode(name, "UTF-8"), true),
-                Foo("token", URLEncoder.encode(token, "UTF-8"), true)
+                Foo("login", login, true),
+                Foo("password", password, true),
+                Foo("name", name, true),
+                Foo("token", token, true)
         )
     }
 }
 
 fun insertUser(user: User) {
     val connection = DriverManager.getConnection(url, org.trofimov.server.managers.user, password)
-    val lgn = user.login
-    val pwd = user.password
-    val nme = user.name
-    val tkn = user.token
+    val lgn = URLEncoder.encode(user.login, "UTF-8")
+    val pwd = URLEncoder.encode(user.password, "UTF-8")
+    val nme = URLEncoder.encode(user.name, "UTF-8")
+    val tkn = URLEncoder.encode(user.token, "UTF-8")
 
     val sql = """
                     INSERT INTO User (login, password, name, token)
                     VALUES ('$lgn', '$pwd', '$nme', '$tkn');"""
-
-    println(sql)
 
     val stmt = connection.createStatement()
 
@@ -77,8 +75,6 @@ fun changeTokenFor(user: User): String {
         Update User
         Set token = '$token'
         Where userId = $uId;"""
-    println(sql)
-
     val stmt = connection.createStatement()
     stmt.executeUpdate(sql)
     connection.close()

@@ -18,7 +18,7 @@ class Message constructor(var messageId: Int, var userId: Int, val roomId: Int, 
                 Foo("userId", userId.toString(), false),
                 Foo("roomId", roomId.toString(), false),
                 Foo("text", text, true),
-                Foo("date", URLEncoder.encode(date, "UTF-8"), true))
+                Foo("date", date, true))
     }
 }
 
@@ -33,8 +33,6 @@ fun insertMessage(msg: Message) {
     val sql = """
                     INSERT INTO Message (messageId, userId, roomId, text, date)
                     VALUES ($ar1, $ar2, $ar25, '$ar3', '$ar4');"""
-
-    println(sql)
 
     val stmt = connection.createStatement()
 

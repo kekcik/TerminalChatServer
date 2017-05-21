@@ -24,14 +24,17 @@ fun initMethods() {
     Spark.get(PREFIX + "login/:login/:password") { req, res ->
         val login = req.params("login").split("=")[1]
         val password = req.params("password").split("=")[1]
+        print("GET: login -> $login, $password")
         checkUser(login, password)
     }
 
     Spark.get(PREFIX + "getUsers") { req, res ->
+        print("GET: getUsers")
         getUsersOld()
     }
 
     Spark.get(PREFIX + "getRooms") { req, res ->
+        print("GET: getRooms")
         getRoomsM()
     }
 
@@ -39,6 +42,7 @@ fun initMethods() {
         val login = req.params("login").split("=")[1]
         val password = req.params("password").split("=")[1]
         val name = req.params("name").split("=")[1]
+        print("GET: register -> $login, $password, $name")
         putUser(login, password, name)
     }
 
@@ -46,6 +50,7 @@ fun initMethods() {
         val token = req.params("token").split("=")[1]
         val name = req.params("name").split("=")[1]
         val pw = req.params("pw").split("=")[1]
+        print("GET: createRoom -> $token, $name, $pw")
         createRoom(token, name, pw)
     }
 
@@ -53,12 +58,14 @@ fun initMethods() {
         val token = req.params("token").split("=")[1]
         val roomName = req.params("roomName").split("=")[1]
         val text = req.params("text").split("=")[1]
+        print("GET: sendMessage -> $token, $roomName, $text")
         sendMessage(token, roomName, text)
     }
 
     Spark.get(PREFIX + "getMessage/:token/:roomName") { req, res ->
         val token = req.params("token").split("=")[1]
         val roomName = req.params("roomName").split("=")[1]
+        print("GET: getMessage -> $token, $roomName")
         getMessage(token, roomName)
     }
 
@@ -66,6 +73,7 @@ fun initMethods() {
         val token = req.params("token").split("=")[1]
         val roomName = req.params("roomName").split("=")[1]
         val pw = req.params("pw").split("=")[1]
+        print("GET: connectToRoom -> $token, $roomName, $pw")
         connectToRoom(token, roomName, pw)
     }
 
@@ -73,11 +81,13 @@ fun initMethods() {
         val token = req.params("token").split("=")[1]
         val roomName = req.params("roomName").split("=")[1]
         val amount = req.params("amount").split("=")[1].toInt()
+        print("GET: getTopMessage -> $token, $roomName, $amount")
         getTopMessage(token, roomName, amount)
     }
 
     Spark.get(PREFIX + "roomsForUser/:token") { req, res ->
         val token = req.params("token").split("=")[1]
+        print("GET: roomsForUser -> $token")
         roomsForUser(token)
     }
 }
