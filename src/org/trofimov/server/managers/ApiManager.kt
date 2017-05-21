@@ -1,10 +1,6 @@
 package org.trofimov.server.managers
 
-import com.yst.demo.jsonObject
-import kotlin.*
 import spark.Spark
-import java.net.URI
-import java.net.URL
 
 /**
  * Created by ivan on 22.04.17.
