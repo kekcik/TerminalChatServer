@@ -17,7 +17,7 @@ class Message constructor(var messageId: Int, var userId: Int, val roomId: Int, 
         return toJSON(
                 Foo("userId", userId.toString(), false),
                 Foo("roomId", roomId.toString(), false),
-                Foo("text", URLEncoder.encode(text, "UTF-8"), true),
+                Foo("text", text, true),
                 Foo("date", URLEncoder.encode(date, "UTF-8"), true))
     }
 }
@@ -30,9 +30,9 @@ fun insertMessage(msg: Message) {
     val ar3 = msg.text
     val ar4 = msg.date
 
-    val sql = URLEncoder.encode("""
+    val sql = """
                     INSERT INTO Message (messageId, userId, roomId, text, date)
-                    VALUES ($ar1, $ar2, $ar25, '$ar3', '$ar4');""",  "UTF-8")
+                    VALUES ($ar1, $ar2, $ar25, '$ar3', '$ar4');"""
 
     println(sql)
 
