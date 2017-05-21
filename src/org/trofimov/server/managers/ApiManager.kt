@@ -2,6 +2,7 @@ package org.trofimov.server.managers
 
 import spark.Spark
 import java.net.URLEncoder
+import java.time.Instant
 
 /**
  * Created by ivan on 22.04.17.
@@ -24,13 +25,17 @@ fun initMethods() {
     Spark.get(PREFIX + "login/:login/:password") { req, res ->
         val login = req.params("login").split("=")[1]
         val password = req.params("password").split("=")[1]
-        println("GET: login -> $login, $password")
+        val ms = Instant.now().toEpochMilli()
+        print("GET: login -> $login, $password <- time:")
         checkUser(login, password)
+        println(Instant.now().toEpochMilli() - ms)
     }
 
     Spark.get(PREFIX + "getUsers") { req, res ->
-        println("GET: getUsers")
+        val ms = Instant.now().toEpochMilli()
+        print("GET: getUsers time:")
         getUsersOld()
+        println(Instant.now().toEpochMilli() - ms)
     }
 
     Spark.get(PREFIX + "getRooms") { req, res ->
