@@ -5,6 +5,7 @@ import org.trofimov.server.helpers.toJSON
 import org.trofimov.server.managers.password
 import org.trofimov.server.managers.url
 import org.trofimov.server.managers.user
+import java.net.URLEncoder
 import java.sql.DriverManager
 
 /**
@@ -17,8 +18,8 @@ class Room constructor(val roomId: Int, var adminId: Int, val name: String, val 
         return toJSON(
                 Foo("roomId", roomId.toString(), true),
                 Foo("adminId", adminId.toString(), true),
-                Foo("name", name.toString(), true),
-                Foo("pw", pw.toString(), true)
+                Foo("name", URLEncoder.encode(name, "UTF-8"), true),
+                Foo("pw", URLEncoder.encode(pw, "UTF-8"), true)
         )
     }
 }

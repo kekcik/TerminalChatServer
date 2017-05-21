@@ -7,6 +7,7 @@ import org.trofimov.server.managers.password
 import org.trofimov.server.managers.tokenGen
 import org.trofimov.server.managers.url
 import org.trofimov.server.managers.user
+import java.net.URLEncoder
 import java.sql.DriverManager
 
 /**
@@ -18,10 +19,10 @@ class User(var userId: Int?, var login: String, var password: String, var name: 
 
     fun toPrint(): String {
         return toJSON(
-                Foo("login", login, true),
-                Foo("password", password, true),
-                Foo("name", name, true),
-                Foo("token", token, true)
+                Foo("login", URLEncoder.encode(login, "UTF-8"), true),
+                Foo("password", URLEncoder.encode(password, "UTF-8"), true),
+                Foo("name", URLEncoder.encode(name, "UTF-8"), true),
+                Foo("token", URLEncoder.encode(token, "UTF-8"), true)
         )
     }
 }

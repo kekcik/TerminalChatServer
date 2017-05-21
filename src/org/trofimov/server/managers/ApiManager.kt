@@ -1,6 +1,7 @@
 package org.trofimov.server.managers
 
 import spark.Spark
+import java.net.URLEncoder
 
 /**
  * Created by ivan on 22.04.17.
@@ -15,7 +16,9 @@ fun initServer() {
     Spark.port(8080)
 }
 
-
+fun encode(str: String): String {
+    return URLEncoder.encode(str, "UTF-8")
+}
 fun initMethods() {
     val PREFIX = "/api/"
     Spark.get(PREFIX + "login/:login/:password") { req, res ->

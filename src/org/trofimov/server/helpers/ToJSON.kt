@@ -1,5 +1,6 @@
 package org.trofimov.server.helpers
 
+import java.net.URLEncoder
 import kotlin.coroutines.experimental.EmptyCoroutineContext.plus
 
 /**
@@ -12,7 +13,7 @@ fun toJSON(vararg args: Foo): String {
     var json = ""
     json += "{"
     for (arg in args) {
-        val key = arg.name
+        val key = arg.name//URLEncoder.encode(arg.name, "UTF-8")
         val v = arg.content
         if (arg.isString) {
             json += """"$key":"$v", """

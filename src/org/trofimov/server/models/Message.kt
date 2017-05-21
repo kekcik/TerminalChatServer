@@ -5,6 +5,7 @@ import org.trofimov.server.managers.password
 import org.trofimov.server.helpers.toJSON
 import org.trofimov.server.managers.url
 import org.trofimov.server.managers.user
+import java.net.URLEncoder
 import java.sql.DriverManager
 
 /**
@@ -16,8 +17,8 @@ class Message constructor(var messageId: Int, var userId: Int, val roomId: Int, 
         return toJSON(
                 Foo("userId", userId.toString(), false),
                 Foo("roomId", roomId.toString(), false),
-                Foo("text", text, true),
-                Foo("date", date, true))
+                Foo("text", URLEncoder.encode(text, "UTF-8"), true),
+                Foo("date", URLEncoder.encode(date, "UTF-8"), true))
     }
 }
 
