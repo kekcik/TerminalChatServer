@@ -27,12 +27,12 @@ fun insertMessage(msg: Message) {
     val ar1 = msg.messageId
     val ar2 = msg.userId
     val ar25 = msg.roomId
-    val ar3 = URLEncoder.encode(msg.text, "UTF-8")
+    val ar3 = msg.text
     val ar4 = msg.date
 
-    val sql = """
+    val sql = URLEncoder.encode("""
                     INSERT INTO Message (messageId, userId, roomId, text, date)
-                    VALUES ($ar1, $ar2, $ar25, '$ar3', '$ar4');"""
+                    VALUES ($ar1, $ar2, $ar25, '$ar3', '$ar4');""",  "UTF-8")
 
     println(sql)
 
