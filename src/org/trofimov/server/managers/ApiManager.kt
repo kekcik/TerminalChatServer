@@ -72,5 +72,10 @@ fun initMethods() {
         val amount = req.params("amount").split("=")[1].toInt()
         getTopMessage(token, roomName, amount)
     }
+
+    Spark.get(PREFIX + "roomsForUser/:token") { req, res ->
+        val token = req.params("token").split("=")[1]
+        roomsForUser(token)
+    }
 }
 

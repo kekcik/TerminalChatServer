@@ -24,9 +24,7 @@ fun createRoom(token: String, name: String, pw: String): String {
                 return toJSON(Foo("code", Errors.ROOM_NAME_ALREADY_USED.code.toString(), false))
             }
     //check name
-
     val login = user.login
-
     val room = Room(Random().nextInt(1_000_000_000), user.userId!!, name, pw)
     val uar = UAR(null, user.userId!!, room.roomId)
     val msg = Message(0, user.userId!!, room.roomId, "$login create chat тест", Date().toString())
@@ -34,6 +32,15 @@ fun createRoom(token: String, name: String, pw: String): String {
     insertRoom(room)
     insertMessage(msg)
     return toJSON(Foo("code", Errors.OK.code.toString(), false))
+}
+
+fun roomsForUser(token: String): String {
+    val user = getLoginBy(token) ?: return toJSON(Foo("code", Errors.WRONG_TOKEN.code.toString(), false))
+    val UARs = getUARsForUser(user.userId!!)
+    return toJSON(
+            Foo("code", Errors.OK.code.toString(), false),
+            Foo("uars", toJSONArray(UARs.map(UAR::toPrint)), false)
+            )
 }
 
 fun sendMessage(token: String, roomName: String, text: String): String {
@@ -66,7 +73,6 @@ fun connectToRoom(token: String, roomName: String, pw: String): String {
                     .filter { it.userId == user.userId!! }
                     .forEach { return toJSON(Foo("code", Errors.ALREADY_CONNECT.code.toString(), false)) }
             if (room.pw == pw) {
-                println("aaaaa " + user.userId + " in room " + room.roomId)
                 val uar = UAR(Random().nextInt(1_000_000_000), user.userId!!, room.roomId)
                 insertUAR(uar)
                 return toJSON(Foo("code", Errors.OK.code.toString(), false))

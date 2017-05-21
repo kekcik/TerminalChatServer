@@ -1,5 +1,7 @@
 package org.trofimov.server.models
 
+import org.trofimov.server.helpers.Foo
+import org.trofimov.server.helpers.toJSON
 import org.trofimov.server.managers.password
 import org.trofimov.server.managers.url
 import org.trofimov.server.managers.user
@@ -11,7 +13,14 @@ import java.sql.DriverManager
 
 
 
-class UAR(var uarId: Int?, var userId: Int, var roomId: Int)
+class UAR(var uarId: Int?, var userId: Int, var roomId: Int) {
+    fun toPrint(): String {
+        return toJSON(
+                Foo("userId", userId.toString(), true),
+                Foo("roomId", roomId.toString(), true)
+        )
+    }
+}
 
 fun insertUAR(uar: UAR) {
     val connection = DriverManager.getConnection(url, user, password)
