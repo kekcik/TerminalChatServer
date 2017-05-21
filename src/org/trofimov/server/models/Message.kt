@@ -27,7 +27,7 @@ fun insertMessage(msg: Message) {
     val ar1 = msg.messageId
     val ar2 = msg.userId
     val ar25 = msg.roomId
-    val ar3 = msg.text
+    val ar3 = URLEncoder.encode(msg.text, "UTF-8")
     val ar4 = msg.date
 
     val sql = """
