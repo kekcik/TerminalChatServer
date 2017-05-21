@@ -14,6 +14,8 @@ import java.sql.DriverManager
 class Message constructor(var messageId: Int, var userId: Int, val roomId: Int, val text: String, var date: String) {
     fun toPrint(): String {
         return toJSON(
+                Foo("userId", userId.toString(), false),
+                Foo("roomId", roomId.toString(), false),
                 Foo("text", text, true),
                 Foo("date", date, true))
     }
