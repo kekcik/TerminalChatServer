@@ -15,6 +15,8 @@ import java.util.Random
 
 private var rooms = arrayOf<Room>()
 
+
+
 fun createRoom(token: String, name: String, pw: String): String {
     val user = getLoginBy(token) ?: return toJSON(Foo("code", Errors.WRONG_TOKEN.code.toString(), false))
     rooms = getRooms()
@@ -32,6 +34,13 @@ fun createRoom(token: String, name: String, pw: String): String {
     insertRoom(room)
     insertMessage(msg)
     return toJSON(Foo("code", Errors.OK.code.toString(), false))
+}
+
+fun getRoomsM(): String {
+    return toJSON(
+            Foo("code", Errors.OK.code.toString(), false),
+            Foo("rooms", toJSONArray(getRooms().map(Room::toPrint)), false)
+    )
 }
 
 fun roomsForUser(token: String): String {

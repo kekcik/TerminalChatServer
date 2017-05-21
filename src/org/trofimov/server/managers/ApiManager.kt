@@ -32,6 +32,10 @@ fun initMethods() {
         getUsersOld()
     }
 
+    Spark.get(PREFIX + "getRooms") { req, res ->
+        getRoomsM()
+    }
+
     Spark.get(PREFIX + "register/:login/:password/:name") { req, res ->
         val login = req.params("login").split("=")[1]
         val password = req.params("password").split("=")[1]

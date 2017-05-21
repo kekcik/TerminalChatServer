@@ -1,5 +1,7 @@
 package org.trofimov.server.models
 
+import org.trofimov.server.helpers.Foo
+import org.trofimov.server.helpers.toJSON
 import org.trofimov.server.managers.password
 import org.trofimov.server.managers.url
 import org.trofimov.server.managers.user
@@ -10,7 +12,16 @@ import java.sql.DriverManager
  */
 
 
-class Room constructor(val roomId: Int, var adminId: Int, val name: String, val pw: String)
+class Room constructor(val roomId: Int, var adminId: Int, val name: String, val pw: String) {
+    fun toPrint(): String {
+        return toJSON(
+                Foo("roomId", roomId.toString(), true),
+                Foo("adminId", adminId.toString(), true),
+                Foo("name", name.toString(), true),
+                Foo("pw", pw.toString(), true)
+        )
+    }
+}
 
 fun getRooms(): Array<Room> {
     var result = arrayOf<Room>()
