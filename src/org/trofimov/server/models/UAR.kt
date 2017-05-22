@@ -16,8 +16,8 @@ import java.sql.DriverManager
 class UAR(var uarId: Int?, var userId: Int, var roomId: Int) {
     fun toPrint(): String {
         return toJSON(
-                Foo("userId", userId.toString(), true),
-                Foo("roomId", roomId.toString(), true)
+                Foo("userId", userId.toString(), false),
+                Foo("roomId", roomId.toString(), false)
         )
     }
 }

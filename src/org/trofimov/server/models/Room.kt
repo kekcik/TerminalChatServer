@@ -17,8 +17,8 @@ import java.sql.DriverManager
 class Room constructor(val roomId: Int, var adminId: Int, val name: String, val pw: String) {
     fun toPrint(): String {
         return toJSON(
-                Foo("roomId", roomId.toString(), true),
-                Foo("adminId", adminId.toString(), true),
+                Foo("roomId", roomId.toString(), false),
+                Foo("adminId", adminId.toString(), false),
                 Foo("name", name, true),
                 Foo("pw", pw, true)
         )
