@@ -16,7 +16,14 @@ import java.sql.DriverManager
 class User(var userId: Int?, var login: String, var password: String, var name: String) {
     var token: String = tokenGen()
     fun toPrint(): String {
+        var id = 0
+        if (userId != null) {
+            id = userId!!
+        } else {
+            id = 0
+        }
         return toJSON(
+                Foo("userId", id.toString(), false),
                 Foo("login", login, true),
                 Foo("password", password, true),
                 Foo("name", name, true),
