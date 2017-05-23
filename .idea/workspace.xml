@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa6df56f-c7dc-4988-b850-64715b3aecf3" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/META-INF/demo.kotlin_module" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/ApiManagerKt$initMethods$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/ApiManagerKt$initMethods$10.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/ApiManagerKt$initMethods$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/ApiManagerKt$initMethods$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/ApiManagerKt$initMethods$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/ApiManagerKt$initMethods$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/ApiManagerKt$initMethods$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/ApiManagerKt$initMethods$7.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/ApiManagerKt$initMethods$8.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/ApiManagerKt$initMethods$9.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/ApiManagerKt.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/models/Room.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/models/RoomKt.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/models/UAR.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/models/UARKt.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/models/User.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/org/trofimov/server/models/UserKt.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/models/Room.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/models/Room.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/models/UAR.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/models/UAR.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,7 +57,7 @@
       <file leaf-file-name="UAR.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/UAR.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="210">
               <caret line="19" column="54" lean-forward="false" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
               <folding>
                 <element signature="e#36#272#0" expanded="true" />
@@ -52,7 +69,7 @@
       <file leaf-file-name="Message.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/Message.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
+            <state relative-caret-position="435">
               <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="e#36#299#0" expanded="true" />
@@ -74,7 +91,7 @@
       <file leaf-file-name="Room.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/Room.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="195">
               <caret line="20" column="56" lean-forward="false" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
               <folding>
                 <element signature="e#36#326#0" expanded="true" />
@@ -93,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/User.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            <state relative-caret-position="997">
+              <caret line="82" column="43" lean-forward="false" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
               <folding>
                 <element signature="e#36#344#0" expanded="true" />
               </folding>
@@ -115,11 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiManager.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ApiManager.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="31" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="349">
+              <caret line="52" column="53" lean-forward="false" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="53" />
               <folding>
                 <element signature="e#38#108#0" expanded="true" />
               </folding>
@@ -186,10 +203,10 @@
         <option value="$PROJECT_DIR$/src/org/trofimov/server/managers/RoomManager.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/helpers/ToJSON.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/models/Message.kt" />
-        <option value="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/models/User.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/models/UAR.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/models/Room.kt" />
+        <option value="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" />
       </list>
     </option>
   </component>
@@ -225,6 +242,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -338,7 +356,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -672,29 +689,29 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27755103" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22066015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22310513" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47227722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -759,9 +776,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#70#162#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -787,9 +802,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#70#162#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -815,9 +828,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#70#162#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -843,9 +854,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#70#162#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,16 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="31" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="e#38#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/ServerMain.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1102,7 +1101,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/Room.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="195">
           <caret line="20" column="56" lean-forward="false" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
           <folding>
             <element signature="e#36#326#0" expanded="true" />
@@ -1112,7 +1111,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/Message.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
+        <state relative-caret-position="435">
           <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="e#36#299#0" expanded="true" />
@@ -1122,7 +1121,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/UAR.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="210">
           <caret line="19" column="54" lean-forward="false" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
           <folding>
             <element signature="e#36#272#0" expanded="true" />
@@ -1132,10 +1131,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/User.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        <state relative-caret-position="997">
+          <caret line="82" column="43" lean-forward="false" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
           <folding>
             <element signature="e#36#344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="52" column="53" lean-forward="false" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="53" />
+          <folding>
+            <element signature="e#38#108#0" expanded="true" />
           </folding>
         </state>
       </provider>

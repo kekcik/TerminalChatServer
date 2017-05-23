@@ -33,8 +33,9 @@ fun initMethods() {
     }
 
     Spark.get(PREFIX + "getUsers") { req, res ->
+        val ip = req.ip()
         val ms = Instant.now().toEpochMilli()
-        print("GET: getUsers -> <- ping: ")
+        print("GET: getUsers -> <- from $ip ping: ")
         val ans = getUsersOld()
         println(Instant.now().toEpochMilli() - ms)
         ans
