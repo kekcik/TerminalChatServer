@@ -68,5 +68,6 @@ fun checkUser(login: String, password: String): String {
 
 fun getUsersOld(): String {
     val users = getUsers()
+    users.forEach { it.password = ""; it.token = ""; }
     return toJSON(Foo("users", toJSONArray(users.map(User::toPrint)), false))
 }
