@@ -8,3 +8,4 @@ sshpass -p "1a296a9daNt2" ssh -o StrictHostKeyChecking=no root@93.189.43.66 "bas
 
 
 
+
