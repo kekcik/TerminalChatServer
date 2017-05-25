@@ -29,7 +29,7 @@ fun createRoom(token: String, name: String, pw: String): String {
     val login = user.login
     val room = Room(Random().nextInt(1_000_000_000), user.userId!!, name, pw)
     val uar = UAR(null, user.userId!!, room.roomId)
-    val msg = Message(0, user.userId!!, room.roomId, "$login create chat тест", Date().toString())
+    val msg = Message(0, user.userId!!, room.roomId, "$login create chat $name", Date().toString())
     insertUAR(uar)
     insertRoom(room)
     insertMessage(msg)
