@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa6df56f-c7dc-4988-b850-64715b3aecf3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
@@ -116,10 +117,10 @@
       <file leaf-file-name="ApiManager.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="132" column="49" lean-forward="false" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+            <state relative-caret-position="-750">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
-                <element signature="e#38#142#0" expanded="true" />
+                <element signature="e#38#161#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -766,7 +767,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#38#142#0" expanded="true" />
+            <element signature="e#38#161#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -792,7 +793,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#38#142#0" expanded="true" />
+            <element signature="e#38#161#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -818,7 +819,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#38#142#0" expanded="true" />
+            <element signature="e#38#161#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1122,10 +1123,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="132" column="49" lean-forward="false" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+        <state relative-caret-position="-750">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="e#38#142#0" expanded="true" />
+            <element signature="e#38#161#0" expanded="true" />
           </folding>
         </state>
       </provider>

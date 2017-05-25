@@ -4,6 +4,7 @@ import spark.Spark
 import java.net.URLEncoder
 import java.text.SimpleDateFormat
 import java.time.Instant
+import java.util.*
 
 /**
  * Created by ivan on 22.04.17.
@@ -28,7 +29,7 @@ fun initMethods() {
         val password = req.params("password").split("=")[1]
         val ms = Instant.now().toEpochMilli()
         val ans = checkUser(login, password)
-        val time = SimpleDateFormat("HH:mm:ss").toString()
+        val time = SimpleDateFormat("HH:mm:ss").format(Date())
         print("GET on $time: login -> $login, $password <- ping: ")
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -38,7 +39,7 @@ fun initMethods() {
         val ip = req.ip()
         val ms = Instant.now().toEpochMilli()
         val ans = getUsersOld()
-        val time = SimpleDateFormat("HH:mm:ss").toString()
+        val time = SimpleDateFormat("HH:mm:ss").format(Date())
         print("GET on $time: getUsers -> <- from $ip ping: ")
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -47,7 +48,7 @@ fun initMethods() {
     Spark.get(PREFIX + "getRooms") { req, res ->
         val ms = Instant.now().toEpochMilli()
         val ans = getRoomsM()
-        val time = SimpleDateFormat("HH:mm:ss").toString()
+        val time = SimpleDateFormat("HH:mm:ss").format(Date())
         print("GET on $time: getRooms -> <- ping: ")
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -59,7 +60,7 @@ fun initMethods() {
         val name = req.params("name").split("=")[1]
         val ms = Instant.now().toEpochMilli()
         val ans = putUser(login, password, name)
-        val time = SimpleDateFormat("HH:mm:ss").toString()
+        val time = SimpleDateFormat("HH:mm:ss").format(Date())
         print("GET on $time: register -> $login, $password, $name <- ping: ")
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -71,7 +72,7 @@ fun initMethods() {
         val pw = req.params("pw").split("=")[1]
         val ms = Instant.now().toEpochMilli()
         val ans = createRoom(token, name, pw)
-        val time = SimpleDateFormat("HH:mm:ss").toString()
+        val time = SimpleDateFormat("HH:mm:ss").format(Date())
         print("GET on $time: createRoom -> $token, $name, $pw <- ping: ")
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -83,7 +84,7 @@ fun initMethods() {
         val text = req.params("text").split("=")[1]
         val ms = Instant.now().toEpochMilli()
         val ans = sendMessage(token, roomName, text)
-        val time = SimpleDateFormat("HH:mm:ss").toString()
+        val time = SimpleDateFormat("HH:mm:ss").format(Date())
         print("GET on $time: sendMessage -> $token, $roomName, $text <- ping: ")
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -94,7 +95,7 @@ fun initMethods() {
         val roomName = req.params("roomName").split("=")[1]
         val ms = Instant.now().toEpochMilli()
         val ans = getMessage(token, roomName)
-        val time = SimpleDateFormat("HH:mm:ss").toString()
+        val time = SimpleDateFormat("HH:mm:ss").format(Date())
         print("GET on $time: getMessage -> $token, $roomName <- ping: ")
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -106,7 +107,7 @@ fun initMethods() {
         val ms = Instant.now().toEpochMilli()
         val pw = req.params("pw").split("=")[1]
         val ans = connectToRoom(token, roomName, pw)
-        val time = SimpleDateFormat("HH:mm:ss").toString()
+        val time = SimpleDateFormat("HH:mm:ss").format(Date())
         print("GET on $time: connectToRoom -> $token, $roomName, $pw <- ping: ")
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -118,7 +119,7 @@ fun initMethods() {
         val amount = req.params("amount").split("=")[1].toInt()
         val ms = Instant.now().toEpochMilli()
         val ans = getTopMessage(token, roomName, amount)
-        val time = SimpleDateFormat("HH:mm:ss").toString()
+        val time = SimpleDateFormat("HH:mm:ss").format(Date())
         print("GET on $time: getTopMessage -> $token, $roomName, $amount <- ping: ")
         println(Instant.now().toEpochMilli() - ms)
         ans
@@ -128,7 +129,7 @@ fun initMethods() {
         val token = req.params("token").split("=")[1]
         val ms = Instant.now().toEpochMilli()
         val ans = roomsForUser(token)
-        val time = SimpleDateFormat("HH:mm:ss").toString()
+        val time = SimpleDateFormat("HH:mm:ss").format(Date())
         print("GET on $time: roomsForUser -> $token <- ping: ")
         println(Instant.now().toEpochMilli() - ms)
         ans
