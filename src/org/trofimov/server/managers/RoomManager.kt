@@ -5,6 +5,7 @@ import org.trofimov.server.helpers.Foo
 import org.trofimov.server.models.*
 import org.trofimov.server.helpers.toJSON
 import org.trofimov.server.helpers.toJSONArray
+import java.text.SimpleDateFormat
 import java.util.*
 import java.util.Random
 
@@ -60,7 +61,7 @@ fun sendMessage(token: String, roomName: String, text: String): String {
             val localUARs = getUARsForRoom(room.roomId)
             for (memberId in localUARs) {
                 if (memberId.userId == user.userId!!) {
-                    val message = Message(0, user.userId!!, room.roomId, text, Date().toString())
+                    val message = Message(0, user.userId!!, room.roomId, text, SimpleDateFormat("HH:mm:ss").format(Date()))
                     insertMessage(message)
                     //room.messages.add(message)
                     return toJSON(Foo("code", Errors.OK.code.toString(), false))
