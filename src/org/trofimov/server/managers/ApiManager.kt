@@ -130,7 +130,7 @@ fun initMethods() {
         val ans = roomsForUser(token)
         val time = SimpleDateFormat("HH:mm:ss").toString()
         print("GET on $time: roomsForUser -> $token <- ping: ")
-        println(Instant.now().toEpochMilli() - ms + "" )
+        println(Instant.now().toEpochMilli() - ms)
         ans
     }
 }
