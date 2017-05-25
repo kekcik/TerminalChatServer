@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa6df56f-c7dc-4988-b850-64715b3aecf3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/org/trofimov/server/managers/RoomManagerKt.class" afterPath="$PROJECT_DIR$/build/org/trofimov/server/managers/RoomManagerKt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/demo-jar-with-dependencies.jar" afterPath="$PROJECT_DIR$/target/demo-jar-with-dependencies.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/demo.jar" afterPath="$PROJECT_DIR$/target/demo.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/managers/RoomManager.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/managers/RoomManager.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/q.sh" afterPath="$PROJECT_DIR$/q.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/trofimov/server/managers/UserManager.kt" afterPath="$PROJECT_DIR$/src/org/trofimov/server/managers/UserManager.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -98,7 +96,7 @@
       <file leaf-file-name="User.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/User.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
+            <state relative-caret-position="656">
               <caret line="82" column="43" lean-forward="false" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
               <folding>
                 <element signature="e#36#344#0" expanded="true" />
@@ -117,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiManager.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ApiManager.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state relative-caret-position="443">
+              <caret line="120" column="54" lean-forward="false" selection-start-line="120" selection-start-column="54" selection-end-line="120" selection-end-column="54" />
               <folding>
                 <element signature="e#38#108#0" expanded="true" />
               </folding>
@@ -129,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserManager.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserManager.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/managers/UserManager.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+            <state relative-caret-position="1005">
+              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding>
                 <element signature="e#37#401#0" expanded="true" />
               </folding>
@@ -184,14 +182,14 @@
         <option value="$PROJECT_DIR$/src/org/trofimov/server/DBManager.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/RoomManager.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/ServerMain.kt" />
-        <option value="$PROJECT_DIR$/src/org/trofimov/server/managers/UserManager.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/helpers/ToJSON.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/models/Message.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/models/User.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/models/UAR.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/models/Room.kt" />
-        <option value="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" />
         <option value="$PROJECT_DIR$/src/org/trofimov/server/managers/RoomManager.kt" />
+        <option value="$PROJECT_DIR$/src/org/trofimov/server/managers/UserManager.kt" />
+        <option value="$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt" />
       </list>
     </option>
   </component>
@@ -1083,26 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/User.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="82" column="43" lean-forward="false" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
-          <folding>
-            <element signature="e#36#344#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <element signature="e#38#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/Room.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1125,10 +1103,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/managers/UserManager.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        <state relative-caret-position="1005">
+          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
             <element signature="e#37#401#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/models/User.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="82" column="43" lean-forward="false" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
+          <folding>
+            <element signature="e#36#344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/trofimov/server/managers/ApiManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="120" column="54" lean-forward="false" selection-start-line="120" selection-start-column="54" selection-end-line="120" selection-end-column="54" />
+          <folding>
+            <element signature="e#38#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
